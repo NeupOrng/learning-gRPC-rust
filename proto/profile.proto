@@ -1,0 +1,21 @@
+syntax = "proto3";
+package profile;
+
+service UserProfile {
+    // Our SayHello rpc accepts HelloRequests and returns HelloReplies
+    rpc GetProfileById (GetProfileByIdRequest) returns (GetProfileByIdResponse);
+}
+
+message GetProfileByIdRequest {
+    // Request message contains the name to be greeted
+    string id = 1;
+}
+
+message GetProfileByIdResponse {
+    // Reply contains the greeting message
+    string id = 1;
+    string name = 2;
+    int32 status_id = 3;
+    string created_at = 4;
+    string updated_at = 5;
+}
